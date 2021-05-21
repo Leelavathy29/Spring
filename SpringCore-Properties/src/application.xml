@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ">
+
+	<!-- <context:property-placeholder location="classpath:sample.properties"/> -->
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyyy-MM-dd" />
+	</bean>
+
+	<bean id="samsung" class="demo.Mobile">
+		<property name="modelName" value="Samsung M3"></property>
+		<property name="price" value="52000"></property>
+		<property name="date">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2010-01-31" />
+			</bean>
+		</property>
+		<property name="decimalValue" value="15633255546763632.3246416539879797465"></property>
+	</bean>
+
+
+</beans>
