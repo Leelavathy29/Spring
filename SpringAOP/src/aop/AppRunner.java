@@ -11,7 +11,13 @@ public class AppRunner {
 	    Trade  trade = context.getBean("mf",Trade.class);
 	   // System.out.println("trade ::" + trade);
 	    trade.purchase();
+	    trade.purchase(200);
+	    trade.purchase(1000, 200);
+	    //double interest = trade.interestCalculation(1000,6,5.4F);
+	    //System.out.println("Interest : " + interest);
+
 	}
 	
 	
 }
+ 
